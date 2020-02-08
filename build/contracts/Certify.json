@@ -1,0 +1,216 @@
+{
+  "contractName": "Certify",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "registrationCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"registrationCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/shrish/cert/contracts/Certify.sol\":\"Certify\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/shrish/cert/contracts/Certify.sol\":{\"keccak256\":\"0x50e62eabd64ae2727ca44622b66d8bb9e4951a4c076e7faab0debcb4e5d53b0c\",\"urls\":[\"bzz-raw://4fa9f4f5516adebda0e1628932335876498b460d47bb6e24c8122266c7a62e3b\",\"dweb:/ipfs/QmWMue33884cdUU28M7DQuN7uNoWyxweGV1Hov8iRg5D33\"]}},\"version\":1}",
+  "bytecode": "0x608060405260008055348015601357600080fd5b506080806100226000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80630d3eafd614602d575b600080fd5b60336045565b60408051918252519081900360200190f35b6000548156fea265627a7a72315820e8603b3e2535f9c9680ecaaddbbdc517dc12a6c94f250c6b11fea36ba559bfbe64736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c80630d3eafd614602d575b600080fd5b60336045565b60408051918252519081900360200190f35b6000548156fea265627a7a72315820e8603b3e2535f9c9680ecaaddbbdc517dc12a6c94f250c6b11fea36ba559bfbe64736f6c63430005100032",
+  "sourceMap": "25:59:0:-;;;80:1;48:33;;25:59;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:59:0;;;;;;;",
+  "deployedSourceMap": "25:59:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:59:0;;;;;;;;;;;;;;;;;;;48:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract Certify {\n    uint public registrationCount = 0;\n}\n",
+  "sourcePath": "/home/shrish/cert/contracts/Certify.sol",
+  "ast": {
+    "absolutePath": "/home/shrish/cert/contracts/Certify.sol",
+    "exportedSymbols": {
+      "Certify": [
+        5
+      ]
+    },
+    "id": 6,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5,
+        "linearizedBaseContracts": [
+          5
+        ],
+        "name": "Certify",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "registrationCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 5,
+            "src": "48:33:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "48:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "80:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 6,
+        "src": "25:59:0"
+      }
+    ],
+    "src": "0:85:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/shrish/cert/contracts/Certify.sol",
+    "exportedSymbols": {
+      "Certify": [
+        5
+      ]
+    },
+    "id": 6,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5,
+        "linearizedBaseContracts": [
+          5
+        ],
+        "name": "Certify",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "registrationCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 5,
+            "src": "48:33:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "48:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "80:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 6,
+        "src": "25:59:0"
+      }
+    ],
+    "src": "0:85:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "1581169110199": {
+      "events": {},
+      "links": {},
+      "address": "0xA300e648A2599CE6D8A308D5f7CDbEECA4f7206C",
+      "transactionHash": "0xecbc23c566f41a2b580d2e8721be145e7c142119cb186e9fb1acabbc1fef4801"
+    }
+  },
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-02-08T13:42:34.817Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
