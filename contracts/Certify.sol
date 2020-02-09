@@ -12,8 +12,15 @@ contract Certify {
 
     mapping(uint => Student) public students;
 
+    event register(
+      uint id,
+      string name,
+      string email,
+      address wallet
+    );
+
     constructor() public {
-      Register("Shrishti","shrishtig797@gmail.com");
+      //Register("Shrishti","shrishtig797@gmail.com");
     }
 
     function Register(string memory _name, string memory _email) public {
@@ -27,6 +34,9 @@ contract Certify {
 
           //Create Event
           students[registrationCount] = Student(registrationCount, _name, _email, msg.sender);
+
+          //Trigger Event
+          emit register(registrationCount, _name, _email, msg.sender);
     }
 
 }

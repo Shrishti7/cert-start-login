@@ -94,7 +94,15 @@ renderTasks: async () => {
 }
 },
 
-setLoading: (boolean) => {
+  Register: async() => {
+    App.setLoading(true)
+    const content_name = $('#stu_name').val()
+    const content_email = $('#stu_email').val()
+    await App.certify.Register(content_name,content_email)
+    window.location.reload()
+  },
+
+  setLoading: (boolean) => {
     App.loading = boolean
     const loader = $('#loader')
     const content = $('#content')
