@@ -57,11 +57,8 @@ render: async() => {
   }
 
   App.setLoading(true)
-
   $('#account').html(App.account)
-
   await App.renderTasks()
-
   App.setLoading(false)
 
 },
@@ -75,13 +72,15 @@ renderTasks: async () => {
       // Fetch the task data from the blockchain
       const stud = await App.certify.students(i)
       const id = stud[0].toNumber()
-      const name = stud[1]
-      const email = stud[2]
-      const wallet = stud[3]
+      const profile = stud[1]
+      const uid = stud[2]
+      const name = stud[3]
+      const email = stud[4]
+      const wallet = stud[5]
 
 
   const $newRegister = $template.clone()
-  $newRegister.find('.content').html(id +'. Name: ' + name + ' Email: ' + email)
+  $newRegister.find('.content').html('Profile: ' + profile + ' ' + id + ' UID:' + uid+ ' Name: ' + name + ' Email: ' + email)
   $newRegister.find('input')
   .prop('name',id)
   .prop('email',email)
@@ -91,16 +90,88 @@ renderTasks: async () => {
 
   //Show the Task
   $newRegister.show()
-}
+  }
 },
 
   Register: async() => {
     App.setLoading(true)
-    const content_name = $('#stu_name').val()
-    const content_email = $('#stu_email').val()
-    await App.certify.Register(content_name,content_email)
-    window.location.reload()
+
+    const registrationCount = await App.certify.registrationCount()
+    var j=0
+
+    for (var i = 1; i <= registrationCount; i++) {
+    const stud = await App.certify.students(i)
+    const id = stud[0].toNumber()
+    const profile = stud[1]
+    const uid = stud[2]
+    const name = stud[3]
+    const email = stud[4]
+    const wallet = stud[5]
+
+    var d = document.getElementById("user_profile")
+    const content_profile = d.options[d.selectedIndex].text
+    const content_uid = $('#user_uid').val()
+    const content_name = $('#user_name').val()
+    const content_email = $('#user_email').val()
+
+
+    if((uid==content_uid)||(email==content_email)||(wallet==App.account))
+      {
+        j=j+1;
+      }
+    }
+
+      if(j<1) {
+        App.setLoading(false)
+        var d = document.getElementById("user_profile")
+        const content_profile = d.options[d.selectedIndex].text
+        const content_uid = $('#user_uid').val()
+        const content_name = $('#user_name').val()
+        const content_email = $('#user_email').val()
+        await App.certify.Register(content_profile, content_uid, content_name, content_email)
+        window.location.reload()
+      }
+      else {
+        window.alert("UID/email/account already registered with another account!")
+        window.location.reload()
+      }
+
+    // if(j!==0){
+    //
+    //   }
+    // else {
+    //   App.setLoading(false)
+    //   await App.certify.Register(content_profile, content_uid, content_name, content_email)
+    //   window.location.reload()
+   // }
   },
+
+  Login: async() => {
+    App.setLoading(true)
+
+    const registrationCount = await App.certify.registrationCount()
+
+    for (var i = 1; i <= registrationCount; i++) {
+    const stud = await App.certify.students(i)
+    const profile = stud[1]
+    const wallet = stud[5]
+
+    App.setLoading(false)
+    if(wallet == App.account) {
+        switch (profile) {
+          case 'Student': window.location.href = "./student.html"
+                          break
+
+          case 'University': window.location.href = "./university.html"
+                             break
+
+          case 'Company': window.location.href = "./company.html"
+                          break
+        }
+    }
+  }
+},
+
 
   setLoading: (boolean) => {
     App.loading = boolean
@@ -113,6 +184,10 @@ renderTasks: async () => {
       loader.hide()
       content.show()
     }
+  },
+
+  toggleSidebar: async() => {
+    document.getElementById("sidebar").classList.toggle('active');
   }
 }
 

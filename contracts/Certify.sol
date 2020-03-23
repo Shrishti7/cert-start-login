@@ -5,6 +5,8 @@ contract Certify {
 
     struct Student{
       uint id;
+      string uid;
+      string profile;
       string name;
       string email;
       address wallet;
@@ -14,6 +16,8 @@ contract Certify {
 
     event register(
       uint id,
+      string uid,
+      string profile,
       string name,
       string email,
       address wallet
@@ -23,9 +27,11 @@ contract Certify {
       //Register("Shrishti","shrishtig797@gmail.com");
     }
 
-    function Register(string memory _name, string memory _email) public {
+    function Register(string memory _profile, string memory _uid,string memory _name, string memory _email) public {
 
           //Check if name and email are empty
+          require(bytes(_profile).length >0 );
+          require(bytes(_uid).length >0 );
           require(bytes(_name).length >0 );
           require(bytes(_email).length >0 );
 
@@ -33,10 +39,10 @@ contract Certify {
           registrationCount ++;
 
           //Create Event
-          students[registrationCount] = Student(registrationCount, _name, _email, msg.sender);
+          students[registrationCount] = Student(registrationCount, _profile, _uid, _name, _email, msg.sender);
 
           //Trigger Event
-          emit register(registrationCount, _name, _email, msg.sender);
+          emit register(registrationCount, _profile, _uid, _name, _email, msg.sender);
     }
 
 }
